@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tipahtanutbot"
+version = "0.1.0"
+description = "Tirsk"
+authors = ["Jaakko Sirén <jaakko.s@iki.fi>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyTelegramBotAPI = "^4.6.0"
+
+[tool.poetry.dev-dependencies]
+pyright = "^1.1.258"
+black = "^22.6.0"
+pylint = "^2.14.4"
+poethepoet = "^0.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poe.tasks]
+run = {script="bot:run", envfile=".env"}
