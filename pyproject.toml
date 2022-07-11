@@ -22,3 +22,10 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 run = {script="bot:run", envfile=".env"}
+
+[tool.poe.tasks.deploy]
+shell = """
+scp bot.py $MACHINE:~/tipahdusbot/;
+ssh $MACHINE '~/tipahdusbot/launch.sh'
+"""
+envfile=".env"
